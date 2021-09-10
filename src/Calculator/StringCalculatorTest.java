@@ -49,6 +49,19 @@ StringCalculator calculator = new StringCalculator();
 		assertEquals(3, calculator.Add("//;\n1;2"));
 	}
 	
-
+	@Test
+	void testNegativeNumber() {
+		IllegalArgumentException ex = null;
+		try
+		{
+			calculator.Add("//;\n1;-2");
+		}
+		catch (IllegalArgumentException e)
+		{
+			ex = e;
+		}
+		assertNotNull(ex);
+		assertEquals(ex.getMessage(), "negatives not allowed -2");
+	}
 
 }
