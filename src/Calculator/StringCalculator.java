@@ -29,7 +29,14 @@ public class StringCalculator {
 		
 		for(String number: numsArray)
 		{
-			ans += Integer.parseInt(number);
+			int num = Integer.parseInt(number);
+			
+			if(num < 0)
+			{
+				throw new IllegalArgumentException("negatives not allowed " + num); 
+			}
+			
+			ans += num;
 		}
 		
 		return ans;		
