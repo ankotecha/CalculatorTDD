@@ -92,4 +92,16 @@ StringCalculator calculator = new StringCalculator();
 	void testNumberOverThousand() {		
 		assertEquals(2,calculator.Add("1001,2"));
 	}
+	
+	@Test
+	void testDelimiterLengthTwo()
+	{
+		assertEquals(6, calculator.Add("//[;;]\n1;;2;;3"));
+	}
+	
+	@Test
+	void testDelimiterLengthOverTwo()
+	{
+		assertEquals(6, calculator.Add("//[***]\n1***2***3"));
+	}	
 }
