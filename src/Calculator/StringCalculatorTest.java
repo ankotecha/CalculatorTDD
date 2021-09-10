@@ -39,10 +39,16 @@ StringCalculator calculator = new StringCalculator();
 		assertEquals(6, calculator.Add("1,2\n3"));
 	}
 	
-	@Test
+	@Test	
 	void testNewLineDelimiterMoreNumbers() {
 		assertEquals(14, calculator.Add("2\n3,4\n5"));
 	}
+	
+	@Test
+	void testOtherDelimiter() {
+		assertEquals(3, calculator.Add("//;\n1;2"));
+	}
+	
 
 
 }
