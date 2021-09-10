@@ -15,8 +15,16 @@ public class StringCalculator {
 		
 		if(numbers.startsWith("//"))
 		{
-			delim = String.valueOf(numbers.charAt(2));
-			numbers = numbers.substring(numbers.indexOf("\n")+1);
+			if(numbers.charAt(2) == '[')
+		    {
+				delim += "|" + numbers.substring(2,numbers.indexOf("\n")).replaceAll("\\[|\\]", "").replace("*", "\\*");
+				numbers = numbers.substring(numbers.indexOf("\n")+1);			        
+	        }
+			else
+			{
+				delim = String.valueOf(numbers.charAt(2));
+				numbers = numbers.substring(numbers.indexOf("\n")+1);
+			}
 		}
 		
 		String numsArray[] = numbers.split(delim+"|\n");
