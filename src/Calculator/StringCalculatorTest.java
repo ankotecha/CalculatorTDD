@@ -28,6 +28,11 @@ StringCalculator calculator = new StringCalculator();
 	void testTwo() {
 		assertEquals(3, calculator.Add("1,2"));
 	}
+	
+	@Test
+	void testFive() {
+		assertEquals(15, calculator.Add("1,2,3,4,5"));
+	}
 
 
 }
