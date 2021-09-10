@@ -64,4 +64,18 @@ StringCalculator calculator = new StringCalculator();
 		assertEquals(ex.getMessage(), "negatives not allowed -2");
 	}
 
+	@Test
+	void testMultipleNegativeNumbers() {
+		IllegalArgumentException ex = null;
+		try
+		{
+			calculator.Add("-1,-2");
+		}
+		catch (IllegalArgumentException e)
+		{
+			ex= e;
+		}
+		assertNotNull(ex);
+		assertEquals(ex.getMessage(), "negatives not allowed -1,-2");
+	}
 }
