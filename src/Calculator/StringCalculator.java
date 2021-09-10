@@ -42,4 +42,9 @@ public class StringCalculator {
 		return ans;
 		
 	}
+	
+	public int GetCalledCount()
+	{
+		return 0;
+	}
 }

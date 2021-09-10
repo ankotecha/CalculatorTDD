@@ -78,4 +78,13 @@ StringCalculator calculator = new StringCalculator();
 		assertNotNull(ex);
 		assertEquals(ex.getMessage(), "negatives not allowed -1,-2");
 	}
+	
+	@Test
+	void testGetCalledCount() {
+		StringCalculator calc = new StringCalculator();
+		calc.Add("1,2");
+		calc.Add("//;\n1;2");
+
+		assertEquals(2,calc.GetCalledCount());
+	}
 }
