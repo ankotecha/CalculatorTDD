@@ -17,7 +17,7 @@ public class StringCalculator {
 		{
 			if(numbers.charAt(2) == '[')
 		    {
-				delim += "|" + numbers.substring(2,numbers.indexOf("\n")).replaceAll("\\[|\\]", "").replace("*", "\\*");
+				delim += "|" + numbers.substring(2,numbers.indexOf("\n")).replace("][", "|").replaceAll("\\[|\\]", "").replace("*", "\\*");
 				numbers = numbers.substring(numbers.indexOf("\n")+1);			        
 	        }
 			else
