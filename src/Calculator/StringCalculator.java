@@ -7,7 +7,15 @@ public class StringCalculator {
 		if(numbers == null || numbers.isEmpty())
 			return 0;
 		
-		String numsArray[] = numbers.split(",|\n");
+		String delim = ",";
+		
+		if(numbers.startsWith("//"))
+		{
+			delim = String.valueOf(numbers.charAt(2));
+			numbers = numbers.substring(numbers.indexOf("\n")+1);
+		}
+		
+		String numsArray[] = numbers.split(delim+"|\n");
 		
 		if(numsArray.length == 1)
 			return Integer.parseInt(numsArray[0]);
