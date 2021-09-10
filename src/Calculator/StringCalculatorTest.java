@@ -87,4 +87,9 @@ StringCalculator calculator = new StringCalculator();
 
 		assertEquals(2,calc.GetCalledCount());
 	}
+	
+	@Test
+	void testNumberOverThousand() {		
+		assertEquals(2,calculator.Add("1001,2"));
+	}
 }
