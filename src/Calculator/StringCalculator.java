@@ -2,8 +2,12 @@ package Calculator;
 
 public class StringCalculator {
 
+	
+	public static int count = 0;
+
 	public int Add(String numbers)
 	{
+		count++;
 		if(numbers == null || numbers.isEmpty())
 			return 0;
 		
@@ -45,6 +49,6 @@ public class StringCalculator {
 	
 	public int GetCalledCount()
 	{
-		return 0;
+		return count;
 	}
 }
