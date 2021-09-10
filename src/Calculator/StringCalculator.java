@@ -24,21 +24,22 @@ public class StringCalculator {
 	}
 	
 	private int SumOfNumbers(String numsArray[])
-	{
+	{		
 		int ans=0;
+		
+		String negativeNumbers = "";
 		
 		for(String number: numsArray)
 		{
 			int num = Integer.parseInt(number);
-			
 			if(num < 0)
-			{
-				throw new IllegalArgumentException("negatives not allowed " + num); 
-			}
-			
+				negativeNumbers +=  (negativeNumbers.isEmpty() ? num : ("," + num));	
 			ans += num;
 		}
+		if(!negativeNumbers.isEmpty())
+			throw new IllegalArgumentException("negatives not allowed " + negativeNumbers); 
 		
-		return ans;		
+		return ans;
+		
 	}
 }
