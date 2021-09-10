@@ -37,8 +37,9 @@ public class StringCalculator {
 		{
 			int num = Integer.parseInt(number);
 			if(num < 0)
-				negativeNumbers +=  (negativeNumbers.isEmpty() ? num : ("," + num));	
-			ans += num;
+				negativeNumbers +=  (negativeNumbers.isEmpty() ? num : ("," + num));
+			if(num < 1000)
+				ans += num;
 		}
 		if(!negativeNumbers.isEmpty())
 			throw new IllegalArgumentException("negatives not allowed " + negativeNumbers); 
