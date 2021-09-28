@@ -1,8 +1,12 @@
 package Calculator;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class StringCalculatorTest {
 
@@ -46,7 +50,11 @@ StringCalculator calculator = new StringCalculator();
 	
 	@Test
 	void testOtherDelimiter() {
-		assertEquals(3, calculator.Add("//;\n1;2"));
+		StringCalculator calc = Mockito.mock(StringCalculator.class);
+		
+		calc.Add("//;\\n1;66");
+		verify(calc);
+
 	}
 	
 	@Test
