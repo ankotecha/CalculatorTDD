@@ -16,10 +16,10 @@ public class StringCalculator {
 		if(numbers.startsWith("//"))
 		{
 			if(numbers.charAt(2) == '[')
-		    {
+		   	{
 				delim += "|" + numbers.substring(2,numbers.indexOf("\n")).replace("][", "|").replaceAll("\\[|\\]", "").replace("*", "\\*");
 				numbers = numbers.substring(numbers.indexOf("\n")+1);			        
-	        }
+	        	}
 			else
 			{
 				delim = String.valueOf(numbers.charAt(2));
